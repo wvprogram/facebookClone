@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Facebook Clone</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/font5/all.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__logo-section">
+                <div class="header__logo-icon">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <div class="header__logo-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="header__menu-tabs">
+                <div class="header__menu-tab header__menu-tab--active">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="header__menu-tab">
+                    <i class="fas fa-flag">
+                        <div class="header__notification-bubble">
+                            3
+                        </div>
+                    </i>
+                </div>
+                <div class="header__menu-tab">
+                    <i class="fas fa-tv">
+                        <div class="header__notification-bubble">
+                            9
+                        </div>
+                    </i>
+                </div>
+                <div class="header__menu-tab">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="header__menu-tab">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+            <div class="header__account">
+                <div class="header__actions">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="header__user-img">
+                    <span class="header__user-name">Jane Doe</span>
+                    <a href="#" class="header__circle-link">
+                        <i class="header__link-icon fas fa-plus"></i>
+                    </a>
+                    <a href="#" class="header__circle-link">
+                        <i class="header__link-icon fab fa-facebook-messenger">
+                            <div class="header__account-notification-bubble">
+                                5
+                            </div>
+                        </i>
+                    </a>
+                    <a href="#" class="header__circle-link">
+                        <i class="header__link-icon fas fa-bell">
+                            <div class="header__account-notification-bubble">
+                                10
+                            </div>
+                        </i>
+                    </a>
+                    <a href="#" class="header__circle-link">
+                        <i class="header__link-icon fas fa-sort-down"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="content-area content-area--feed">
+            <section class="sidenav">
+                <div class="sidenav__item">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="sidenav__item-img">
+                    <span class="sidenav__item-title">
+                        Jane Doe
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <div class="sidenav__item-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <span class="sidenav__item-title">
+                        Friends
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <div class="sidenav__item-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <span class="sidenav__item-title">
+                        Pages
+                        <span class="sidenav__item-notification">
+                            <div class="sidenav__item-notification-circle"></div>9+ new
+                        </span>
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <div class="sidenav__item-icon sidenav__item-icon--circle-white">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="sidenav__item-title">
+                        Groups
+                        <span class="sidenav__item-notification">
+                            <div class="sidenav__item-notification-circle"></div>3+ new
+                        </span>
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <div class="sidenav__item-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <span class="sidenav__item-title">
+                        Marketplace
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <div class="sidenav__item-icon sidenav__item-icon-circle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <span class="sidenav__item-title">
+                        See More
+                    </span>
+                </div>
+                <div class="sidenav__line"></div>
+
+                <span class="sidenav__heading-title">
+                    Your Shortcuts
+                </span>
+                <div class="sidenav__item">
+                    <div class="sidenav__item-icon sidenav__item-icon--circle-grey">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <span class="sidenav__item-title">
+                        CodingPhase Group
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3l8a1iv0wCVkfNnNmPf95g/ff5d28fa91bfefdabe43523bae4d6315/rkb2-game_info-boxart-keyart-01-560x698-logo_Tablet-_1_.jpg" class="sidenav__item-img">
+                    <span class="sidenav__item-title">
+                        Gaming Spot
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <img src="https://i.ytimg.com/vi/kX0tq3qsY_U/maxresdefault.jpg" class="sidenav__item-img">
+                    <span class="sidenav__item-title">
+                        Programming Beginners
+                    </span>
+                </div>
+                <div class="sidenav__item">
+                    <img src="https://www.protocol.com/media-library/less-than-p-greater-than-spotifys-use-of-spotify-goes-beyond-the-fun-of-wrapped-trivia-and-work-playlists-less-than-p-greater-than.png?id=29171621" class="sidenav__item-img">
+                    <span class="sidenav__item-title">
+                        Spotify
+                    </span>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>
