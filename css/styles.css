@@ -22,7 +22,29 @@
     --icon-circle-bg: linear-gradient(0deg, rgba(65,67,69,1) 0%, rgba(107,110,114,1) 100%);
     --light-grey-bg: #F5F5F5;
     --dark-grey-bg: #E0E0E0;
+    --shadow-color: rgba(0, 0, 0, 0.25);
 }
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --fb-blue: ##524eee;
+        --fb-black: #ffffff;
+        --fb-red: #ee2340;
+        --fb-green: #6fcf97;
+        --fb-yellow: #f6b024;
+        --fb-bgcolor: #141432;
+        --fb-white: #ffffff;
+        --fb-whitebg: #1d1d42;
+        --dark-color-text: #ffffff;
+        --light-color-text: #d4d4dc;
+        --button-link: #524eee;
+        --stories-bg: #524eee;
+        --icon-circle-bg: #524eee;
+        --light-grey-bg: #524eee;
+        --dark-grey-bg: #6e6ae7;
+        --shadow-color: #252283;
+    }
+} */
 
 body {
     background: var(--fb-bgcolor);
@@ -40,7 +62,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px 0px var(--shadow-color);
     position: fixed;
     z-index: 20;
     top: 0;
@@ -77,6 +99,14 @@ header {
     padding-left: 35px;
     font-weight: 300;
     border: none;
+}
+
+.header__mobile-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    cursor: pointer;
 }
 
 .header__menu-tabs {
@@ -203,7 +233,7 @@ header {
 .content-area--feed {
     padding: 90px 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .sidenav {
@@ -211,6 +241,8 @@ header {
     display: flex;
     flex-direction: column;
     position: fixed;
+    left: 0;
+    margin-left: 15px;
 }
 
 .sidenav__item {
@@ -326,7 +358,6 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-left: 24%;
 }
 
 .stories {
@@ -416,7 +447,7 @@ header {
     width: 100%;
     flex: none;
     border-radius: 5px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0, 0.25);
+    box-shadow: 0px 1px 2px 0px var(--shadow-color);
     margin-bottom: 20px;
 }
 
@@ -484,6 +515,74 @@ header {
 
 .post-types__item .fa-laugh-beam {
     color: var(--fb-yellow);
+}
+
+/* Create Room Post */
+.rooms {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 5px;
+    background: var(--fb-whitebg);
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 2px 0px var(--shadow-color);
+    padding: 10px;
+}
+
+.rooms__button {
+    padding: 10px 20px;
+    background: var(--light-grey-bg);
+    border-radius: 20px;
+    border: 2px solid var(--dark-grey-bg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.rooms__button i {
+    margin-right: 10px;
+    color: var(--fb-red);
+}
+
+.rooms__button span {
+    color: var(--fb-blue);
+}
+
+.rooms__room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.rooms__room:nth-last-child() {
+    margin-right: none;
+}
+
+.rooms__room img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 1px 1px 0px var(--shadow-color);
+}
+
+.rooms__dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--fb-green);
+    border: 1px solid var(--fb-white);
+    bottom: 0;
+    right: 1px;
 }
 
 /* Feed Box Photo Post */
@@ -770,9 +869,85 @@ header {
 .contactnav {
     display: flex;
     flex-direction: column;
-    width: 16%;
-    margin-left: 83%;
+    width: 100%;
+    max-width: 335px;
     position: fixed;
+    right: 5px;
+}
+
+.contactnav__friends {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.contactnav__friend {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.contactnav__friend img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.contactnav__friend-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactnav__friend-name {
+    font-weight: 700;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.contactnav__friend-days {
+    font-size: 12px;
+    color: var(--light-color-text);
+    position: absolute;
+    top: 45px;
+    right: 0;
+}
+
+.contactnav__friend-mutual {
+    font-size: 12px;
+    color: var(--light-color-text);
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.contactnav__friend-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+}
+
+.contactnav__friend-confirm {
+    margin-right: 10px;
+    color: var(--fb-white);
+    background: var(--fb-blue);
+    border: 1px solid var(--fb-blue);
+    border-radius: 5px;
+    font-weight: 600;
+    width: 125px;
+    cursor: pointer;
+}
+
+.contactnav__friend-delete {
+    margin-right: 10px;
+    color: var(--fb-black);
+    background: var(--button-link);
+    border: 1px solid var(--button-link);
+    border-radius: 5px;
+    font-weight: 600;
+    width: 125px;
+    cursor: pointer;
 }
 
 .contactnav__menu {
@@ -785,6 +960,7 @@ header {
 
 .contactnav__menu span {
     font-weight: 600;
+    margin-top: 5px;
 }
 
 .contactnav__menu-icons {
@@ -793,10 +969,10 @@ header {
 }
 
 .contactnav__menu-icons i {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    font-size: 15px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -814,12 +990,13 @@ header {
     justify-content: left;
     align-items: center;
     padding: 5px 0;
+    position: relative;
 }
 
 .contactnav__item:hover {
     background-color: var(--dark-grey-bg);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 15px 0 0px 15px;
 }
 
 .contactnav__item-img {
@@ -832,4 +1009,210 @@ header {
 
 .contactnav__item span {
     font-size: 1rem;
+}
+
+.contactnav__item-dot {
+    background: var(--fb-green);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 1px solid var(--fb-white);
+    position: absolute;
+    bottom: 4px;
+    right: 85%;
+}
+
+/* Floating messenger notification */
+
+.floatingmsg {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+}
+
+.floatingmsg__bubble {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px 0px var(--shadow-color);
+    background: var(--button-link);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.floatingmsg__bubble img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.floatingmsg__bubble:hover .fa-edit {
+    color: var(--fb-blue);
+}
+
+.floatingmsg__notification {
+    background: var(--fb-red);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-weight: 700;
+    z-index: 3;
+}
+
+
+/* Desktop Version slight changes */
+@media only screen and (max-width: 1850px) {
+    .contactnav__friend {
+        margin-bottom: 40px;
+    }
+
+    .contactnav__friend-button {
+        display: block;
+    }
+
+    .contactnav__friend-confirm {
+        margin-bottom: 10px;
+        height: 30px;
+    }
+
+    .contactnav__friend-delete {
+        height: 30px;
+    }
+}
+
+/* Large Laptop Version */
+@media only screen and (max-width: 1300px) {
+    .header__menu-tabs {
+        display: none;
+    }
+
+    .header__mobile-button {
+        display: flex;
+    }
+
+    .stories {
+        flex-wrap: nowrap;
+        z-index: 9;
+        padding-bottom: 9px;
+        overflow-x: scroll;
+    }
+
+    .stories__video-container {
+        flex: 1 0 auto;
+    }
+    
+    .feed {
+        width: 65%;
+        display: block;
+    }
+
+    .sidenav {
+        width: 15%;
+    }
+
+    .contactnav {
+        width: 15%;
+    }
+
+    .contactnav__item-dot {
+        right: 70%;
+    }
+}
+
+/* Smaller Laptop Version */
+@media only screen and (max-width: 1000px) {
+    .sidenav {
+        display: none;
+    }
+
+    .contactnav {
+        display: none;
+    }
+
+    .feed {
+        width: 100%;
+    }
+}
+
+/* Tablet Version */
+@media only screen and (max-width: 768px) {
+    .header__user-img {
+        display: none;
+    }
+
+    .header__user-name {
+        display: none;
+    }
+
+    .header__logo-search .fa-search {
+        left: 12px;
+        top: 12px;
+    }
+
+    .header__logo-search input[type="text"] {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .feed {
+        display: block;
+    }
+
+    .stories {
+        flex-wrap: nowrap;
+        z-index: 9;
+        padding-bottom: 20px;
+        overflow-x: scroll;
+    }
+
+    .stories__video-container {
+        flex: 1 0 auto;
+    }
+
+    .content-area--feed {
+        width: 100%;
+    }
+
+    .rooms {
+        flex-wrap: nowrap;
+        z-index: 9;
+        padding-bottom: 10px;
+        overflow-x: scroll;
+    }
+
+    .rooms__room {
+        flex: 1 0 auto;
+    }
+}
+
+/* Smaller Mobile Phone Version */
+@media only screen and (max-width: 500px) {
+    .header__account {
+        display: none;
+    }
+
+    .post-types__title {
+        display: none;
+    }
+
+    .rooms__button span {
+        display: none;
+    }
+
+    .rooms__button {
+        width: 15%;
+    }
 }
